@@ -1,8 +1,8 @@
 public class Ingredient {
     private String name;
-    private double amount;
+    private int amount;
 
-    public Ingredient(String name, double amount) {
+    public Ingredient(String name, int amount) {
         this.name = name;
         this.amount = amount;
     }
@@ -15,11 +15,11 @@ public class Ingredient {
         this.name = name;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
