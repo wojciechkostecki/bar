@@ -4,15 +4,13 @@ import java.util.Scanner;
 
 public class Barman {
     private Scanner scanner = new Scanner(System.in);
-    private int ingredientsNumber;
 
     public Drink createDrink() {
         System.out.println("Podaj ilość składników: ");
-        ingredientsNumber = scanner.nextInt();
-        int quantity = ingredientsNumber;
+        int ingredientsNumber = scanner.nextInt();
         scanner.nextLine();
         List<Ingredient> ingredients = new ArrayList<>();
-        for (int i = 0; i < quantity; i++) {
+        for (int i = 0; i < ingredientsNumber; i++) {
             Ingredient ingredient = loadIngredient();
             ingredients.add(ingredient);
         }
@@ -29,7 +27,7 @@ public class Barman {
     }
 
     public void printDrink(Drink drink) {
-        System.out.println("Drink składa się z "+ ingredientsNumber + " składników:");
+        System.out.println("Drink składa się z "+ drink.getIngredients().size()+ " składników:");
         drink.getIngredients().forEach(x -> System.out.println("-" + x.getName() + "(" + x.getAmount() + ")"));
     }
 }
